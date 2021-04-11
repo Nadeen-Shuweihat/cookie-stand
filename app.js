@@ -32,6 +32,7 @@ const seattle ={
         let seattleUnorderedlist=document.createElement('ul')
           container.appendChild(seattleUnorderedlist);
           let d=0;
+          
           for(let f=0; f<perHour.length;f++){
               let li=document.createElement('li');
               seattleUnorderedlist.appendChild(li);
