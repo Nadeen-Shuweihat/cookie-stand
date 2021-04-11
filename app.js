@@ -44,7 +44,56 @@ const seattle ={
     }
 }
 
+function randomValue(min,max){
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
 seattle.getcustomerPerHour();
 seattle.getAvgCookiePerHour();
 seattle.Data();
 
+const Tokyo ={
+    cityName:'Tokyo',
+    minCust:3,
+    maxCust:24,
+    avgCookie:1.2,
+    customer:0,
+    cookiePerHour:[],
+    custperHour:[],
+
+    getcustomerPerHour:function(){
+        for (let z =0; z< perHour.length; z++){
+            this.custperHour.push(randomValue(this.minCust,this.maxCust));
+        }
+        console.log(this.custperHour);
+    },
+    getAvgCookiePerHour: function(){
+        for (let x = 0; x < this.custperHour.length; x++) {
+            this.cookiePerHour.push(Math.ceil(this.avgCookie*this.custperHour[x]))   
+        }
+        console.log(this.cookiePerHour);
+    },
+
+    Data:function () {
+        let container1=document.getElementById('container');
+        let title1=document.createElement('h2');
+        container1.appendChild(title1);
+        title1.textContent=this.cityName;
+        let TokyoUnorderedlist=document.createElement('ul')
+          container1.appendChild(TokyoUnorderedlist);
+          let c=0;
+          for(let v=0; v<perHour.length;v++){
+              let li=document.createElement('li');
+              TokyoUnorderedlist.appendChild(li);
+              li.textContent=perHour[v]+':'+this.cookiePerHour[v]+'cookies'
+              d=this.cookiePerHour[v]+c;
+          }
+          let totalli=document.createElement('li')
+          TokyoUnorderedlist.appendChild(totalli);
+          totalli.textContent='total :' + c + ' cookies'
+    }
+}
+
+
+Tokyo.getcustomerPerHour();
+Tokyo.getAvgCookiePerHour();
+Tokyo.Data();
