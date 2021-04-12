@@ -86,7 +86,7 @@ const Tokyo ={
               let li=document.createElement('li');
               TokyoUnorderedlist.appendChild(li);
               li.textContent=perHour[v]+':'+this.cookiePerHour[v]+'cookies'
-              d=this.cookiePerHour[v]+c;
+              c=this.cookiePerHour[v]+c;
           }
           let totalli=document.createElement('li')
           TokyoUnorderedlist.appendChild(totalli);
