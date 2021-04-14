@@ -125,6 +125,35 @@ Paris.render();
 Lima.render();
 console.log(arrayOfObjects);
 
+
+
+
+const salmonForm =document.getElementById('CookieForm');
+salmonForm.addEventListener('submit', handleSubmitting);
+
+function handleSubmitting(event){
+  event.preventDefault();
+  let newCountry = event.target.cityField.value;
+  // console.log(event.target.cityField.value);
+  let newMin = event.target.minField.value;
+  newMin = parseFloat(newMin);
+  //console.log(event.target.minField.value);
+  let newMax = event.target.maxField.value;
+  newMax = parseFloat(newMax);
+  // console.log(event.target.maxField.value);
+  let newAvg = event.target.avgField.value;
+  newAvg = parseFloat(newAvg);
+  //console.log(event.target.avgField.value);
+
+  let newCity = new Countries(newCountry,newMin,newMax,newAvg);
+  console.log(newCity);
+
+  newCity.getcustomerPerHour();
+  newCity.getAvgCookiePerHour();
+  newCity.render();
+}
+
+
 function footerRender() {
 
   let footerRow = document.createElement('tr');
@@ -156,6 +185,7 @@ function footerRender() {
 }
 
 footerRender();
+
 
 // seattle.getAvgCookiePerHour();
 // console.log(seattle);
