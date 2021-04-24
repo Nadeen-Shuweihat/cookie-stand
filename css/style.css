@@ -115,3 +115,15 @@ h3 {
 .family {
     margin-top: 50px;
 }
+
+table {
+    border-style: dotted;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+#container {
+    padding-left: 50px;
+}
